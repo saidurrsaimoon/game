@@ -1,0 +1,1166 @@
+/* =========================================================
+   SAIMOON.EXE
+   CINEMATIC GAME STYLES
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        "Poppins",
+        "Hind Siliguri",
+        sans-serif;
+
+    background:#060009;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,0,128,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(100,50,255,.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255,30,130,.12),
+            transparent 35%
+        ),
+        #060009;
+}
+
+.aurora{
+    position:absolute;
+    width:70vw;
+    height:70vw;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.25;
+}
+
+.aurora-one{
+    background:#ff007f;
+    left:-30%;
+    top:-25%;
+    animation:auroraMove 14s infinite alternate ease-in-out;
+}
+
+.aurora-two{
+    background:#713cff;
+    right:-30%;
+    bottom:-25%;
+    animation:auroraMoveTwo 18s infinite alternate ease-in-out;
+}
+
+@keyframes auroraMove{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(20vw,10vh) scale(1.2);
+    }
+}
+
+@keyframes auroraMoveTwo{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(-20vw,-10vh) scale(1.2);
+    }
+}
+
+.moon{
+    position:absolute;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    right:8%;
+    top:15%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff,
+            #ddd 40%,
+            #999 100%
+        );
+    opacity:.06;
+    filter:blur(1px);
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-5;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#ff55aa;
+    opacity:.3;
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-20vh);
+    }
+}
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+#floatingHearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+}
+
+.float-heart{
+    position:absolute;
+    bottom:-50px;
+    animation:floatHeart linear forwards;
+    opacity:.7;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(.7);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:
+            translateY(-120vh)
+            rotate(360deg)
+            scale(1.5);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#050008;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-orbit{
+    width:130px;
+    height:130px;
+    border:1px solid rgba(255,70,170,.3);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    animation:orbitSpin 4s linear infinite;
+}
+
+.loader-orbit::before{
+    content:"";
+    position:absolute;
+    inset:-15px;
+    border:1px solid rgba(150,80,255,.2);
+    border-radius:50%;
+}
+
+.loader-heart{
+    font-size:65px;
+    animation:loaderHeart 1.2s infinite;
+}
+
+@keyframes loaderHeart{
+    0%,100%{
+        transform:scale(.9);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes orbitSpin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.loader-title{
+    margin-top:30px;
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:4px;
+}
+
+.loader-subtitle{
+    margin-top:8px;
+    color:#9f92a4;
+    font-size:13px;
+}
+
+.loader-bar{
+    width:230px;
+    height:5px;
+    background:#211022;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:25px;
+}
+
+#loaderProgress{
+    height:100%;
+    width:0;
+    background:
+        linear-gradient(
+            90deg,
+            #ff1989,
+            #a05cff
+        );
+}
+
+#loaderPercent{
+    margin-top:10px;
+    color:#ff6db4;
+    font-size:12px;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:13px 20px;
+    background:rgba(5,0,12,.55);
+    border-bottom:1px solid rgba(255,255,255,.07);
+    backdrop-filter:blur(20px);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    font-weight:800;
+    letter-spacing:1px;
+    font-size:16px;
+}
+
+.brand-icon{
+    color:#ff4aa3;
+    margin-right:3px;
+}
+
+.brand b{
+    color:#ff4aa3;
+}
+
+.game-status{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.xp-area{
+    min-width:120px;
+}
+
+.xp-label{
+    font-size:10px;
+    color:#aaa;
+    margin-bottom:4px;
+}
+
+.xp-bar{
+    height:5px;
+    width:110px;
+    background:#241129;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#xpFill{
+    width:0;
+    height:100%;
+    background:
+        linear-gradient(
+            90deg,
+            #ff1688,
+            #985cff
+        );
+    transition:.5s;
+}
+
+.level-badge{
+    padding:7px 11px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:12px;
+    font-size:10px;
+}
+
+/* =========================================================
+   SIDE NAV
+========================================================= */
+
+.side-progress{
+    position:fixed;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.nav-dot{
+    width:31px;
+    height:31px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(0,0,0,.25);
+    color:#887d8e;
+    cursor:pointer;
+    transition:.25s;
+    font-size:9px;
+}
+
+.nav-dot:hover,
+.nav-dot.active{
+    color:white;
+    background:#ff238d;
+    border-color:#ff62b1;
+    box-shadow:0 0 18px rgba(255,20,140,.35);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.screen{
+    min-height:100vh;
+    padding:
+        120px
+        25px
+        100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-screen{
+    text-align:center;
+}
+
+.status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:50px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    color:#ffc1df;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#42ff9a;
+    box-shadow:0 0 12px #42ff9a;
+}
+
+.hero-title-small{
+    color:#786b7c;
+    letter-spacing:4px;
+    font-size:10px;
+    margin-top:30px;
+}
+
+.hero-title{
+    margin-top:10px;
+    font-size:
+        clamp(
+            48px,
+            9vw,
+            92px
+        );
+    line-height:.95;
+    font-weight:800;
+}
+
+.hero-title span{
+    background:
+        linear-gradient(
+            90deg,
+            #ff2b95,
+            #ff82c5,
+            #9c6aff
+        );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:650px;
+    margin:25px auto;
+    color:#bdb1c3;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.hero-heart-container{
+    width:220px;
+    height:220px;
+    margin:30px auto;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-heart{
+    font-size:125px;
+    z-index:5;
+    position:relative;
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255,20,130,.65)
+        );
+    animation:
+        heartBeat
+        1.3s
+        infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+.heart-ring{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(255,50,160,.25);
+    animation:ringPulse 3s infinite;
+}
+
+.ring-one{
+    width:160px;
+    height:160px;
+}
+
+.ring-two{
+    width:205px;
+    height:205px;
+    animation-delay:.7s;
+}
+
+.ring-three{
+    width:250px;
+    height:250px;
+    animation-delay:1.4s;
+}
+
+@keyframes ringPulse{
+    0%{
+        transform:scale(.7);
+        opacity:0;
+    }
+    30%{
+        opacity:1;
+    }
+    100%{
+        transform:scale(1.3);
+        opacity:0;
+    }
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.hero-warning{
+    margin-top:18px;
+    color:#6f6373;
+    font-size:11px;
+}
+
+.scroll-hint{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#625568;
+    font-size:9px;
+    letter-spacing:3px;
+    text-align:center;
+}
+
+.scroll-hint div{
+    margin-top:8px;
+    font-size:18px;
+    animation:scrollBounce 1.5s infinite;
+}
+
+@keyframes scrollBounce{
+    50%{
+        transform:translateY(7px);
+    }
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+    border:0;
+    cursor:pointer;
+    font-family:inherit;
+    color:#fff;
+    font-weight:700;
+    border-radius:15px;
+    padding:13px 20px;
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        background .2s;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn:active{
+    transform:scale(.96);
+}
+
+.btn-primary{
+    background:
+        linear-gradient(
+            135deg,
+            #ff1688,
+            #863dff
+        );
+    box-shadow:
+        0 12px 35px
+        rgba(255,0,130,.2);
+}
+
+.btn-primary:hover{
+    box-shadow:
+        0 18px 45px
+        rgba(255,0,130,.32);
+}
+
+.btn-glass{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.btn-large{
+    padding:16px 28px;
+    font-size:14px;
+}
+
+/* =========================================================
+   LEVEL HEADER
+========================================================= */
+
+.level-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.level-number{
+    color:#ff52a8;
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.level-header h2{
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            52px
+        );
+    margin:5px 0;
+    line-height:1.1;
+}
+
+.level-header h2 span{
+    display:inline-block;
+}
+
+.level-header p{
+    color:#968a9b;
+    font-size:13px;
+}
+
+.level-reward{
+    padding:10px 14px;
+    border-radius:14px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    text-align:right;
+    white-space:nowrap;
+}
+
+.level-reward span{
+    display:block;
+    color:#776b7b;
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.level-reward b{
+    color:#ff6db4;
+    font-size:13px;
+}
+
+/* =========================================================
+   GAME CARD
+========================================================= */
+
+.game-card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:30px;
+    padding:30px;
+    backdrop-filter:blur(20px);
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.25);
+}
+
+.game-info-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
+}
+
+.game-instruction{
+    color:#b7acba;
+    font-size:12px;
+}
+
+.game-counter{
+    color:#ff6db4;
+    font-weight:700;
+}
+
+/* =========================================================
+   CATCH GAME
+========================================================= */
+
+.catch-arena{
+    height:390px;
+    border-radius:23px;
+    overflow:hidden;
+    position:relative;
+    border:1px solid rgba(255,255,255,.08);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,0,130,.08),
+            transparent 50%
+        ),
+        rgba(0,0,0,.18);
+}
+
+.arena-grid{
+    position:absolute;
+    inset:0;
+    opacity:.13;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.2) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.2) 1px,
+            transparent 1px
+        );
+    background-size:35px 35px;
+}
+
+.arena-center-text{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#312537;
+    font-size:50px;
+    font-weight:800;
+    letter-spacing:8px;
+    pointer-events:none;
+}
+
+.moving-heart{
+    position:absolute;
+    border:0;
+    background:none;
+    font-size:55px;
+    cursor:pointer;
+    display:none;
+    z-index:5;
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255,0,140,.7)
+        );
+    transition:.12s;
+}
+
+.moving-heart:hover{
+    transform:scale(1.15);
+}
+
+.game-actions{
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.game-message{
+    min-height:25px;
+    text-align:center;
+    margin-top:15px;
+    color:#a99daa;
+    font-size:13px;
+}
+
+/* =========================================================
+   ANSWER GAME
+========================================================= */
+
+.big-question{
+    text-align:center;
+    font-size:clamp(22px,4vw,32px);
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.answer-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:15px;
+}
+
+.answer-card{
+    min-height:180px;
+    border-radius:22px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.02)
+        );
+    border:1px solid rgba(255,255,255,.09);
+    color:#fff;
+    cursor:pointer;
+    font-family:inherit;
+    transition:.3s;
+    padding:20px;
+}
+
+.answer-card:hover{
+    transform:
+        translateY(-7px)
+        rotateX(4deg);
+    border-color:#ff4da4;
+    background:rgba(255,30,140,.08);
+}
+
+.answer-icon{
+    font-size:50px;
+    margin-bottom:12px;
+}
+
+.answer-card strong{
+    display:block;
+    font-size:16px;
+}
+
+.answer-card small{
+    display:block;
+    color:#817585;
+    margin-top:5px;
+}
+
+/* =========================================================
+   COMBO
+========================================================= */
+
+.combo-top{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-bottom:15px;
+}
+
+.combo-stat{
+    text-align:center;
+}
+
+.combo-stat small{
+    display:block;
+    color:#776a7b;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.combo-stat strong{
+    display:block;
+    font-size:28px;
+    color:#ff5cae;
+}
+
+.combo-zone{
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,0,130,.1),
+            transparent 55%
+        );
+}
+
+.combo-ring{
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:1px solid rgba(255,50,160,.25);
+    animation:
+        comboRing 2s
+        infinite;
+}
+
+@keyframes comboRing{
+    50%{
+        transform:scale(1.25);
+        opacity:.25;
+    }
+}
+
+.combo-heart{
+    position:relative;
+    z-index:2;
+    border:0;
+    background:none;
+    font-size:110px;
+    cursor:pointer;
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,0,130,.6)
+        );
+    transition:.08s;
+}
+
+.combo-heart:active{
+    transform:scale(.72);
+}
+
+.combo-tip{
+    margin-top:10px;
+    color:#645668;
+    letter-spacing:4px;
+    font-size:9px;
+}
+
+/* =========================================================
+   FIND GAME
+========================================================= */
+
+.find-top{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    color:#756979;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.find-top strong{
+    color:#ff67b2;
+}
+
+.find-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:13px;
+    max-width:700px;
+    margin:auto;
+}
+
+.find-item{
+    min-height:140px;
+    border-radius:20px;
+    background:
+        rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    color:white;
+    cursor:pointer;
+    font-family:inherit;
+    transition:.2s;
+}
+
+.find-item:hover{
+    transform:translateY(-4px);
+    border-color:#ff4ba4;
+}
+
+.find-item span{
+    display:block;
+    font-size:43px;
+}
+
+.find-item small{
+    color:#817583;
+}
+
+/* =========================================================
+   LOVE METER
+========================================================= */
+
+.love-card{
+    text-align:center;
+}
+
+.meter-number{
+    font-size:90px;
+    font-weight:800;
+    line-height:1;
+    margin:15px 0 35px;
+    background:
+        linear-gradient(
+            90deg,
+            #ff298f,
+            #ff9bd0,
+            #9565ff
+        );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.meter-number small{
+    font-size:30px;
+}
+
+.love-meter{
+    height:32px;
+    padding:4px;
+    border-radius:30px;
+    background:#1d0d24;
+    border:1px solid rgba(255,255,255,.08);
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.love-fill{
+    width:0;
+    height:100%;
+    border-radius:30px;
+    position:relative;
+    background:
+        linear-gradient(
+            90deg,
+            #ff1688,
+            #ff5dae,
+            #9a5cff
+        );
+    transition:.35s;
+    box-shadow:
+        0 0 25px
+        rgba(255,0,140,.4);
+}
+
+.meter-shine{
+    position:absolute;
+    top:0;
+    left:-100px;
+    width:70px;
+    height:100%;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.5),
+            transparent
+        );
+    animation:meterShine 2s infinite;
+}
+
+@keyframes meterShine{
+    to{
+        left:110%;
+    }
+}
+
+.love-status{
+    color:#95899a;
+    margin-bottom:25px;
+}
+
+/* =========================================================
+   MYSTERY BOX
+========================================================= */
+
+.box-grid{
+    display:grid;
+    
