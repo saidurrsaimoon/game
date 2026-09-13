@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08000f">
+    <title>SAIMOON.exe ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+<div id="loader">
+    <div class="loader-orbit">
+        <div class="loader-heart">❤️</div>
+    </div>
+
+    <div class="loader-title">SAIMOON.exe</div>
+    <div class="loader-subtitle">Initializing Love Mission...</div>
+
+    <div class="loader-bar">
+        <div id="loaderProgress"></div>
+    </div>
+
+    <div id="loaderPercent">0%</div>
+</div>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="moon"></div>
+</div>
+
+<div id="stars"></div>
+<div id="particles"></div>
+<div id="floatingHearts"></div>
+<div id="confetti"></div>
+
+
+<!-- =====================================================
+     TOP NAVIGATION
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="nav-container">
+
+        <div class="brand">
+            <span class="brand-icon">♥</span>
+            <span>SAIMOON</span><b>.exe</b>
+        </div>
+
+        <div class="game-status">
+
+            <div class="xp-area">
+                <div class="xp-label">
+                    XP <span id="xpText">0</span>/1000
+                </div>
+
+                <div class="xp-bar">
+                    <div id="xpFill"></div>
+                </div>
+            </div>
+
+            <div class="level-badge">
+                LVL <span id="levelText">1</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     SIDE PROGRESS
+===================================================== -->
+
+<div class="side-progress">
+
+    <button onclick="goTo('home')" class="nav-dot active" data-section="home">
+        <span>01</span>
+    </button>
+
+    <button onclick="goTo('level1')" class="nav-dot" data-section="level1">
+        <span>02</span>
+    </button>
+
+    <button onclick="goTo('level2')" class="nav-dot" data-section="level2">
+        <span>03</span>
+    </button>
+
+    <button onclick="goTo('level3')" class="nav-dot" data-section="level3">
+        <span>04</span>
+    </button>
+
+    <button onclick="goTo('level4')" class="nav-dot" data-section="level4">
+        <span>05</span>
+    </button>
+
+    <button onclick="goTo('level5')" class="nav-dot" data-section="level5">
+        <span>06</span>
+    </button>
+
+    <button onclick="goTo('level6')" class="nav-dot" data-section="level6">
+        <span>07</span>
+    </button>
+
+    <button onclick="goTo('final')" class="nav-dot" data-section="final">
+        <span>08</span>
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home" class="screen hero-screen">
+
+    <div class="container hero-container">
+
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            PRIVATE LOVE MISSION
+        </div>
+
+        <div class="hero-title-small">
+            SYSTEM ONLINE
+        </div>
+
+        <h1 class="hero-title">
+            Welcome to
+            <br>
+            <span>SAIMOON.exe</span>
+        </h1>
+
+        <p class="hero-description">
+            একটি ছোট্ট interactive mission শুরু হতে যাচ্ছে।
+            এখানে আছে কিছু challenge, কিছু surprise,
+            আর শেষে আছে একটা খুব গুরুত্বপূর্ণ result। ❤️
+        </p>
+
+        <div class="hero-heart-container">
+
+            <div class="heart-ring ring-one"></div>
+            <div class="heart-ring ring-two"></div>
+            <div class="heart-ring ring-three"></div>
+
+            <div class="hero-heart">
+                ❤️
+            </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <button class="btn btn-primary btn-large" onclick="startMission()">
+                🚀 START MISSION
+            </button>
+
+            <button class="btn btn-glass" onclick="showInstructions()">
+                ❓ HOW TO PLAY
+            </button>
+
+        </div>
+
+        <div class="hero-warning">
+            ⚠️ Warning: Excessive cuteness may occur.
+        </div>
+
+    </div>
+
+    <div class="scroll-hint">
+        <span>SCROLL TO EXPLORE</span>
+        <div>↓</div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 1
+===================================================== -->
+
+<section id="level1" class="screen game-screen locked-section">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 01</div>
+                <h2>Catch The Heart <span>❤️</span></h2>
+                <p>হার্টটা ধরো। কিন্তু সাবধান—ও পালাবে!</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+100 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="game-info-bar">
+
+                <div class="game-instruction">
+                    🎯 ৫ বার heart ধরতে হবে
+                </div>
+
+                <div class="game-counter">
+                    <span id="catchCount">0</span> / 5
+                </div>
+
+            </div>
+
+            <div id="catchArena" class="catch-arena">
+
+                <div class="arena-grid"></div>
+
+                <div class="arena-center-text">
+                    READY?
+                </div>
+
+                <button
+                    id="catchHeart"
+                    class="moving-heart"
+                    onclick="catchHeart()">
+                    ❤️
+                </button>
+
+            </div>
+
+            <div class="game-actions">
+
+                <button
+                    id="catchStart"
+                    class="btn btn-primary"
+                    onclick="startCatchGame()">
+                    🎯 START
+                </button>
+
+            </div>
+
+            <div id="catchMessage" class="game-message"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 2
+===================================================== -->
+
+<section id="level2" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 02</div>
+                <h2>Important Question <span>💭</span></h2>
+                <p>একটা উত্তর বেছে নাও।</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+100 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="big-question">
+                Saimoon কেমন? 😌
+            </div>
+
+            <div class="answer-grid">
+
+                <button class="answer-card" onclick="answerQuestion(1, this)">
+                    <div class="answer-icon">🙂</div>
+                    <strong>ভালো</strong>
+                    <small>সাধারণ উত্তর</small>
+                </button>
+
+                <button class="answer-card" onclick="answerQuestion(2, this)">
+                    <div class="answer-icon">😍</div>
+                    <strong>অনেক ভালো</strong>
+                    <small>ভালো উত্তর</small>
+                </button>
+
+                <button class="answer-card" onclick="answerQuestion(3, this)">
+                    <div class="answer-icon">🥰</div>
+                    <strong>একদম অসাধারণ!</strong>
+                    <small>এটাই expected 😌</small>
+                </button>
+
+            </div>
+
+            <div id="answerResult" class="game-message"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 3
+===================================================== -->
+
+<section id="level3" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 03</div>
+                <h2>Heart Combo <span>🔥</span></h2>
+                <p>১০ সেকেন্ডে যত বেশি পারো tap করো।</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+150 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="combo-top">
+
+                <div class="combo-stat">
+                    <small>COMBO</small>
+                    <strong id="comboCount">0</strong>
+                </div>
+
+                <div class="combo-stat">
+                    <small>TARGET</small>
+                    <strong>20</strong>
+                </div>
+
+                <div class="combo-stat">
+                    <small>TIME</small>
+                    <strong><span id="comboTime">10</span>s</strong>
+                </div>
+
+            </div>
+
+            <div class="combo-zone">
+
+                <div class="combo-ring"></div>
+
+                <button
+                    id="comboHeart"
+                    class="combo-heart"
+                    onclick="tapCombo()">
+                    ❤️
+                </button>
+
+                <div class="combo-tip">
+                    TAP! TAP! TAP!
+                </div>
+
+            </div>
+
+            <div class="game-actions">
+
+                <button
+                    id="comboStart"
+                    class="btn btn-primary"
+                    onclick="startCombo()">
+                    🔥 START COMBO
+                </button>
+
+            </div>
+
+            <div id="comboMessage" class="game-message"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 4
+===================================================== -->
+
+<section id="level4" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 04</div>
+                <h2>Find The Real Heart <span>🔎</span></h2>
+                <p>Fake heart-এর মধ্যে আসল heart খুঁজে বের করো।</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+150 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="find-top">
+                <span>ROUND</span>
+                <strong>
+                    <span id="findRound">0</span>/3
+                </strong>
+            </div>
+
+            <div id="findGrid" class="find-grid"></div>
+
+            <div class="game-actions">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="newFindRound()">
+                    🔎 NEW ROUND
+                </button>
+
+            </div>
+
+            <div id="findMessage" class="game-message">
+                New Round চাপো।
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 5
+===================================================== -->
+
+<section id="level5" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 05</div>
+                <h2>Love Meter <span>💗</span></h2>
+                <p>দেখি Love Meter কোথায় গিয়ে থামে!</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+150 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card love-card">
+
+            <div class="meter-number">
+                <span id="lovePercent">0</span><small>%</small>
+            </div>
+
+            <div class="love-meter">
+
+                <div id="loveFill" class="love-fill">
+                    <div class="meter-shine"></div>
+                </div>
+
+            </div>
+
+            <div id="loveStatus" class="love-status">
+                System waiting...
+            </div>
+
+            <button
+                class="btn btn-primary btn-large"
+                onclick="addLove()">
+                💖 ADD LOVE
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEVEL 6
+===================================================== -->
+
+<section id="level6" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">LEVEL 06</div>
+                <h2>Mystery Boxes <span>🎁</span></h2>
+                <p>একটা box বেছে নাও। ভিতরে কী আছে কে জানে?</p>
+            </div>
+
+            <div class="level-reward">
+                <span>REWARD</span>
+                <b>+150 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="box-grid">
+
+                <button class="mystery-box" onclick="openMystery(1)">
+                    <div class="box-glow"></div>
+                    <div class="box-icon">🎁</div>
+                    <strong>BOX 01</strong>
+                    <small>Mystery...</small>
+                </button>
+
+                <button class="mystery-box" onclick="openMystery(2)">
+                    <div class="box-glow"></div>
+                    <div class="box-icon">🎁</div>
+                    <strong>BOX 02</strong>
+                    <small>Mystery...</small>
+                </button>
+
+                <button class="mystery-box" onclick="openMystery(3)">
+                    <div class="box-glow"></div>
+                    <div class="box-icon">🎁</div>
+                    <strong>BOX 03</strong>
+                    <small>Mystery...</small>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BONUS MEMORY
+===================================================== -->
+
+<section id="memory" class="screen game-screen">
+
+    <div class="container">
+
+        <div class="level-header">
+
+            <div>
+                <div class="level-number">BONUS LEVEL</div>
+                <h2>Love Memory <span>🧠</span></h2>
+                <p>একই emoji-এর pair মিলিয়ে ফেলো।</p>
+            </div>
+
+            <div class="level-reward">
+                <span>BONUS</span>
+                <b>+200 XP</b>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div id="memoryGrid" class="memory-grid"></div>
+
+            <div class="game-actions">
+
+                <button
+                    class="btn btn-glass"
+                    onclick="resetMemory()">
+                    🔄 RESTART
+                </button>
+
+            </div>
+
+            <div id="memoryMessage" class="game-message">
+                Find all pairs ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section id="final" class="screen final-screen">
+
+    <div class="container">
+
+        <div class="final-card">
+
+            <div class="final-background-glow"></div>
+
+            <div class="final-content">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <div class="complete-badge">
+                    ✓ MISSION COMPLETE
+                </div>
+
+                <div class="final-small">
+                    OFFICIAL SYSTEM RESULT
+                </div>
+
+                <h1 class="final-title">
+                    CONGRATULATIONS!
+                </h1>
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <h2>
+                    তুমি Saimoon-কে ভালোবাসো!
+                </h2>
+
+                <p class="final-description">
+                    সব challenge পার হয়ে System এখন officially
+                    confirm করেছে যে Love Mission সফল হয়েছে।
+                    আর এখন আর পালানোর কোনো সুযোগ নেই। 😌❤️
+                </p>
+
+                <div class="final-stats">
+
+                    <div class="final-stat">
+                        <span>XP</span>
+                        <strong id="finalXP">0</strong>
+                    </div>
+
+                    <div class="final-stat">
+                        <span>LEVEL</span>
+                        <strong id="finalLevel">1</strong>
+                    </div>
+
+                    <div class="final-stat">
+                        <span>STATUS</span>
+                        <strong>❤️</strong>
+                    </div>
+
+                </div>
+
+                <div class="final-buttons">
+
+                    <a
+                        id="whatsappButton"
+                        class="btn whatsapp-btn"
+                        target="_blank"
+                        rel="noopener">
+                        💚 SEND TO SAIMOON
+                    </a>
+
+                    <button
+                        class="btn btn-glass"
+                        onclick="location.reload()">
+                        🔄 PLAY AGAIN
+                    </button>
+
+                </div>
+
+                <div class="final-note">
+                    Made with ❤️ and a little bit of mischief.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-card">
+
+        <button
+            class="popup-close"
+            onclick="closePopup()">
+            ×
+        </button>
+
+        <div id="popupEmoji" class="popup-emoji">
+            🎁
+        </div>
+
+        <h2 id="popupTitle">
+            Surprise!
+        </h2>
+
+        <p id="popupText"></p>
+
+        <button
+            class="btn btn-primary"
+            onclick="closePopup()">
+            ❤️ CONTINUE
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div id="toast" class="toast"></div>
+
+
+<!-- =====================================================
+     SOUND TOGGLE
+===================================================== -->
+
+<button
+    id="soundToggle"
+    class="sound-toggle"
+    onclick="toggleSound()">
+    🔊
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+              </html>
