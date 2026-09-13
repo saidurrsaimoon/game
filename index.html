@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#090014">
+
+    <title>Saimoon Mission ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div id="stars"></div>
+    <div id="particles"></div>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div class="logo">
+            SAIMOON<span>❤️</span>
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <small>XP</small>
+                <b id="xp">0</b>
+            </div>
+
+            <div class="stat">
+                <small>SCORE</small>
+                <b id="score">0</b>
+            </div>
+
+            <div class="stat">
+                <small>LEVEL</small>
+                <b id="level">1</b>
+            </div>
+
+        </div>
+
+        <button id="muteBtn" class="icon-btn" type="button">
+            🔊
+        </button>
+
+    </header>
+
+
+    <!-- XP BAR -->
+    <div class="xp-wrapper">
+        <div id="xpBar" class="xp-bar"></div>
+    </div>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero section">
+
+            <div class="hero-badge">
+                ✨ SECRET MISSION ✨
+            </div>
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h1>
+                SAIMOON
+                <span>MISSION</span>
+            </h1>
+
+            <p class="hero-text">
+                একটি ছোট্ট মজার Mission আছে... 😏
+            </p>
+
+            <p class="hero-sub">
+                কয়েকটা Game খেলো, কিছু Challenge complete করো,
+                তারপর দেখা যাবে আসল রহস্যটা কী! 👀
+            </p>
+
+            <button
+                class="main-btn"
+                type="button"
+                data-scroll="#game1"
+            >
+                🚀 START MISSION
+            </button>
+
+            <div class="scroll-hint">
+                ↓ নিচে যাও ↓
+            </div>
+
+        </section>
+
+
+        <!-- MISSION INFO -->
+        <section class="info-section section">
+
+            <div class="section-title">
+                <span>01</span>
+                <h2>MISSION RULES</h2>
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <div>❤️</div>
+                    <h3>Heart</h3>
+                    <p>Heart ধরতে হবে</p>
+                </div>
+
+                <div class="info-card">
+                    <div>🎯</div>
+                    <h3>Challenge</h3>
+                    <p>কিছু ছোট Game খেলতে হবে</p>
+                </div>
+
+                <div class="info-card">
+                    <div>🎁</div>
+                    <h3>Mystery</h3>
+                    <p>শেষে আছে Secret Reveal</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 1 -->
+        <section id="game1" class="game-section section">
+
+            <div class="game-number">
+                GAME 01
+            </div>
+
+            <h2>
+                Catch The Heart ❤️
+            </h2>
+
+            <p class="game-description">
+                পালানোর আগেই Heart-টা ধরো!
+            </p>
+
+            <div class="game-card">
+
+                <div class="game-header">
+                    <span>HEARTS</span>
+                    <strong id="heartCount">0/5</strong>
+                </div>
+
+                <div
+                    id="heartGame"
+                    class="heart-arena"
+                >
+
+                    <button
+                        id="movingHeart"
+                        class="moving-heart"
+                        type="button"
+                    >
+                        ❤️
+                    </button>
+
+                </div>
+
+                <div class="game-help">
+                    ❤️ Heart-এ click করো
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 2 -->
+        <section id="game2" class="game-section section">
+
+            <div class="game-number">
+                GAME 02
+            </div>
+
+            <h2>
+                Find The Real Heart 🔎
+            </h2>
+
+            <p class="game-description">
+                এতগুলোর মধ্যে আসল ❤️ কোনটা?
+            </p>
+
+            <div class="game-card">
+
+                <div
+                    id="emojiGrid"
+                    class="emoji-grid"
+                ></div>
+
+                <p class="game-help">
+                    একটা মাত্র আসল Heart আছে!
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 3 -->
+        <section id="game3" class="game-section section">
+
+            <div class="game-number">
+                GAME 03
+            </div>
+
+            <h2>
+                Saimoon সম্পর্কে তোমার মতামত? 😎
+            </h2>
+
+            <p class="game-description">
+                একটা answer বেছে নাও
+            </p>
+
+            <div class="choice-grid">
+
+                <button
+                    class="choice-btn"
+                    type="button"
+                    data-answer="ভালো 😌"
+                >
+                    😌 ভালো
+                </button>
+
+                <button
+                    class="choice-btn"
+                    type="button"
+                    data-answer="খুব ভালো 😎"
+                >
+                    😎 খুব ভালো
+                </button>
+
+                <button
+                    class="choice-btn"
+                    type="button"
+                    data-answer="একদম অসাধারণ! 🔥"
+                >
+                    🔥 একদম অসাধারণ
+                </button>
+
+                <button
+                    class="choice-btn"
+                    type="button"
+                    data-answer="এটা তো বলা যাবে না 😂"
+                >
+                    😂 এটা বলা যাবে না
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 4 -->
+        <section id="game4" class="game-section section">
+
+            <div class="game-number">
+                GAME 04
+            </div>
+
+            <h2>
+                Heart Combo 🔥
+            </h2>
+
+            <p class="game-description">
+                ৭ সেকেন্ডে ১০ বার Heart tap করো!
+            </p>
+
+            <div class="combo-card">
+
+                <div class="combo-number">
+                    <span id="comboCount">0</span>
+                    <small>/ 10</small>
+                </div>
+
+                <button
+                    id="comboHeart"
+                    class="combo-heart"
+                    type="button"
+                    disabled
+                >
+                    ❤️
+                </button>
+
+                <button
+                    id="startCombo"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    🔥 START COMBO
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 5 -->
+        <section id="game5" class="game-section section">
+
+            <div class="game-number">
+                GAME 05
+            </div>
+
+            <h2>
+                Saimoon Love Meter 💖
+            </h2>
+
+            <p class="game-description">
+                Button চাপতে থাকো এবং meter 100% করো!
+            </p>
+
+            <div class="meter-card">
+
+                <div class="meter-top">
+                    <span>LOVE LEVEL</span>
+                    <strong id="lovePercent">0%</strong>
+                </div>
+
+                <div class="meter">
+                    <div
+                        id="loveMeter"
+                        class="meter-fill"
+                    ></div>
+                </div>
+
+                <div class="meter-heart">
+                    💗
+                </div>
+
+                <button
+                    id="loveButton"
+                    class="main-btn"
+                    type="button"
+                >
+                    💖 ADD LOVE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 6 -->
+        <section id="game6" class="game-section section">
+
+            <div class="game-number">
+                FINAL GAME
+            </div>
+
+            <h2>
+                Mystery Box 🎁
+            </h2>
+
+            <p class="game-description">
+                কোন Box-এর ভিতরে Secret আছে?
+            </p>
+
+            <div class="boxes">
+
+                <button
+                    class="mystery-box"
+                    type="button"
+                >
+                    <span>🎁</span>
+                    <small>BOX 01</small>
+                </button>
+
+                <button
+                    class="mystery-box"
+                    type="button"
+                >
+                    <span>🎁</span>
+                    <small>BOX 02</small>
+                </button>
+
+                <button
+                    class="mystery-box"
+                    type="button"
+                >
+                    <span>🎁</span>
+                    <small>BOX 03</small>
+                </button>
+
+                <button
+                    class="mystery-box"
+                    type="button"
+                >
+                    <span>🎁</span>
+                    <small>BOX 04</small>
+                </button>
+
+                <button
+                    class="mystery-box"
+                    type="button"
+                >
+                    <span>🎁</span>
+                    <small>BOX 05</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+        <section
+            id="final"
+            class="final-screen section"
+        >
+
+            <div class="final-glow"></div>
+
+            <div class="final-content">
+
+                <div class="celebration">
+                    🎉 ❤️ 🥳
+                </div>
+
+                <div class="final-badge">
+                    MISSION COMPLETE
+                </div>
+
+                <h2>
+                    CONGRATULATIONS!
+                </h2>
+
+                <p class="final-main">
+                    তুমি Saimoon-কে ভালোবাসো ❤️
+                </p>
+
+                <p class="final-small">
+                    System-এর কাছে এখন আর কোনো সন্দেহ নেই! 😂
+                </p>
+
+                <div class="final-stats">
+
+                    <div>
+                        <span>SCORE</span>
+                        <b id="finalScore">0</b>
+                    </div>
+
+                    <div>
+                        <span>LEVEL</span>
+                        <b id="finalLevel">1</b>
+                    </div>
+
+                    <div>
+                        <span>LOVE</span>
+                        <b>100%</b>
+                    </div>
+
+                </div>
+
+                <a
+                    class="whatsapp-btn"
+                    href="https://wa.me/8801610426493?text=I%20Love%20You%20%E2%9D%A4%EF%B8%8F"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    💚 SEND TO SAIMOON
+                </a>
+
+                <button
+                    id="restartBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    🔄 PLAY AGAIN
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- TOAST -->
+    <div
+        id="toast"
+        class="toast"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- CLICK EFFECT -->
+    <div id="clickEffects"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
